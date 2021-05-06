@@ -74,10 +74,12 @@ class MapsActivity : AppCompatActivity() {
                                     val geocoder = Geocoder(this@MapsActivity)
                                     var geocoderresult = geocoder.getFromLocation(currentLatitude , currentLogtitude , 1)
                                     currentAddress = geocoderresult[0].getAddressLine(0)
-                                    var myLocation = LatLng(currentLatitude, currentLogtitude,)
+
+                                    var myLocation = LatLng(currentLatitude, currentLogtitude)
                                     mMap.addMarker(MarkerOptions().position(myLocation).title(currentAddress)).showInfoWindow()
                                     mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation))
                                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 15f))
+
                                 }
                             }
 
